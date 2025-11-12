@@ -5,7 +5,6 @@ setup.py
 diploma_frontend.egg-info/PKG-INFO
 diploma_frontend.egg-info/SOURCES.txt
 diploma_frontend.egg-info/dependency_links.txt
-diploma_frontend.egg-info/requires.txt
 diploma_frontend.egg-info/top_level.txt
 frontend/__init__.py
 frontend/admin.py

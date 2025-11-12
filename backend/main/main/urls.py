@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     # Рут шаблон:
-    path('', include('apps.frontend.urls')),
+    path('', include('frontend.urls')),
     # Панель админа
     path('admin/', admin.site.urls),
     # Остальные пути
