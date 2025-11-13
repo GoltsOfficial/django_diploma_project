@@ -1,37 +1,13 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 
-# Create your views here.
-class CategoriesView:
-    @classmethod
-    def as_view(cls):
-        pass
+def catalog_list(request):
+    return JsonResponse({'message': 'Catalog list endpoint', 'app': 'catalog'})
 
+def catalog_detail(request, id):
+    return JsonResponse({'message': f'Catalog detail for id: {id}', 'app': 'catalog'})
 
-class CatalogView:
-    @classmethod
-    def as_view(cls):
-        pass
+def categories(request):
+    return JsonResponse({'message': 'Categories endpoint', 'app': 'catalog'})
 
-
-class PopularView:
-    @classmethod
-    def as_view(cls):
-        pass
-
-
-class LimitedView:
-    @classmethod
-    def as_view(cls):
-        pass
-
-
-class SalesView:
-    @classmethod
-    def as_view(cls):
-        pass
-
-
-class BannersView:
-    @classmethod
-    def as_view(cls):
-        pass
+def sale_products(request):
+    return JsonResponse({'message': 'Sale products endpoint', 'app': 'catalog'})

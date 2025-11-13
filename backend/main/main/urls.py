@@ -13,7 +13,7 @@ urlpatterns = [
     path('api/basket/', include('apps.basket.urls')),
     path('api/orders/', include('apps.order.urls')),
     path('api/payment/', include('apps.payment.urls')),
-    path('api/profile/', include('apps.profile.urls')),
+    path('api/userprofile/', include('apps.userprofile.urls')),
     path('api/tags/', include('apps.tags.urls')),
     path('api/product/', include('apps.product.urls')),
 ]
