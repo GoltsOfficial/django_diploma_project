@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-
+from django.views.generic import RedirectView
 
 urlpatterns = [
+path('frontend/frontend/static', RedirectView.as_view(url='/')),
     # Рут шаблон:
     path('', include('frontend.urls')),
     # Панель админа
