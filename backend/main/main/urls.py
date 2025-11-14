@@ -3,18 +3,33 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 
 urlpatterns = [
-path('frontend/frontend/static', RedirectView.as_view(url='/')),
-    # Рут шаблон:
+    # Фронтенд пути (из установленного пакета frontend)
     path('', include('frontend.urls')),
-    # Панель админа
+
+    # Редирект для кривой ссылки из фронтенда
+    path('frontend/frontend/static', RedirectView.as_view(url='/')),
+
+    # API пути - возвращают JSON
+    path('api/sign-in', include('auth_app.urls')),
+    path('api/sign-up', include('auth_app.urls')),
+    path('api/sign-out', include('auth_app.urls')),
+    path('api/categories', include('catalog.urls')),
+    path('api/catalog', include('catalog.urls')),
+    path('api/products/popular', include('catalog.urls')),
+    path('api/products/limited', include('catalog.urls')),
+    path('api/sales', include('catalog.urls')),
+    path('api/banners', include('catalog.urls')),
+    path('api/product/<int:id>', include('product.urls')),
+    path('api/product/<int:id>/review', include('product.urls')),
+    path('api/basket', include('basket.urls')),
+    path('api/orders', include('order.urls')),
+    path('api/orders/<int:id>', include('order.urls')),
+    path('api/payment', include('payment.urls')),
+    path('api/profile', include('userprofile.urls')),
+    path('api/profile/password', include('userprofile.urls')),
+    path('api/profile/avatar', include('userprofile.urls')),
+    path('api/tags', include('tags.urls')),
+
+    # Админка
     path('admin/', admin.site.urls),
-    # Остальные пути
-    path('api/auth/', include('apps.auth_app.urls')),
-    path('api/catalog/', include('apps.catalog.urls')),
-    path('api/basket/', include('apps.basket.urls')),
-    path('api/orders/', include('apps.order.urls')),
-    path('api/payment/', include('apps.payment.urls')),
-    path('api/userprofile/', include('apps.userprofile.urls')),
-    path('api/tags/', include('apps.tags.urls')),
-    path('api/product/', include('apps.product.urls')),
 ]

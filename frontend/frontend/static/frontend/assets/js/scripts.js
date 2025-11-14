@@ -565,7 +565,7 @@ var Sort = function(){
 Sort().init();
 var Compare = function(){
     var $compare = $('.Compare');
-    var $products = $compare.find('.Compare-products');
+    var $products = $compare.find('.Compare-product');
     var $checkDifferent = $('.Compare-checkDifferent input');
     return {
         init: function(){
